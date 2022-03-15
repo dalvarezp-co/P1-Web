@@ -1,0 +1,25 @@
+.carro{
+    height: auto;
+    width: auto;
+    max-height: 70px;
+    max-width: 250px;
+    text-align: right;
+}
+
+.title{
+    font-family: 'Satisfy', cursive;
+    font-size: xx-large;
+}
+
+.subtitulo{
+    text-align: center;
+}
+
+.botonesCompra{
+    margin-right: 0;
+    margin-left:auto;
+}
+
+.totalCompra{
+    font-weight: bold;
+}
