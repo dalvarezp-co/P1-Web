@@ -67,7 +67,7 @@ function restaurantEjecution (productoArray) {
         aggButton.setAttribute("type", "button");
         aggButton.setAttribute("id", "button-" + categoria + "-" + item.name);
         aggButton.setAttribute("position", "static")
-        aggButton.textContent = "Add to card";
+        aggButton.textContent = "Add to cart";
 
         aggButton.addEventListener("click", function() {
           contarElem(item, cantidad);
