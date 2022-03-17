@@ -1,90 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ejercicio</title>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
-      </style>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="index.css" />
-  </head>
-  <body>
-    <div class="container-fluid">
-      <nav class="navbar navbar-light bg-white">
-        <a class="navbar-brand title" href="#">Restaurant & Lounge</a>
-        <ul class="navbar-nav ml-auto">
-            <a class="navbar-link" href="#">
-              <img src="carrito.png" class="img-responsive carro" id="carro" />
-            </a>
-            <a class="navbar-brand" id="items"> 0 items </a>
-        </ul>
-      </nav>
-      <hr/>
-      <div class="text-center"><img src="banner.png" class="img-responsive center-block" alt="Banner"></div>
-      <hr/>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="#" id="burguers">Burguers</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" id="tacos">Tacos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" id="salads">Salads</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" id="desserts">Desserts</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" id="drinks">Drinks & Sides</a>
-            </li>
-          </ul>
-      </nav>
-      <hr/>
-      <div class="row" id="contenido"></div>
-      <!-- Modal -->
-<div class="modal fade" id="mensajito" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Cancel the order</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        Are you sure about cancelling the order?
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal" id="cancelOrder">Yes, I want to cancel the order</button>
-        <button type="button" class="btn btn-light" data-dismiss="modal">No, I want to continue adding products</button>
-      </div>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant & Lounge</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+    <body>
+        <header>
+        <div class="container-fluid">
+            <div class="row d-flex justify-content-between align-items-center">
+                <div class="col mt-3">
+                    <h3 id="titleRestaurant">Restaurant & Lounge</h3>
+                </div>
+                <div class="col d-flex justify-content-end">
+                    <a href="#" id="eleCarrito"><img src="carrito.png" alt="carro de compras" id="Cart"></a>
+                    <span id="appElem" class="mt-3">0 items</span>
+                </div>
+            </div>
+        </div>
+        </header>
+        <hr>
+        <div>
+            <div id="bannerRestaurant">
+            <img src="banner.png" alt="Burger Banner" id="Banner">
+            </div>
+        </div>
+        <hr>
+        <nav class="navbar navbar-expand-lg navbar-expand-md navbar-expand-sm navbar-dark bg-dark" id="catNavbar">
+            <div class="collapse navbar-collapse" id="contNavbar">
+                <ul class="navbar-nav mr-auto" id="catList">
+                </ul>
+            </div>
+        </nav>
+        <hr>
+        <h2 class="text-center" id="catTitle">&nbsp;</h2>
+        <hr>
+        <div>
+            <div class="container-fluid" id="cardContainer">
+                <div class="row d-flex" id = "products">
+                </div>
+            </div>
+        </div>
+        <div>
+            <div id="eleTable">
+            </div>
+            <div id="itemsOpc">
+            </div>
+        </div>
+    <div class="modal fade" id="modCancel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Cancel the order</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                Are you sure about cancelling the order?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success btn-border" data-dismiss="modal" id="buttonYes">Yes, I want to cancel the order</button>
+                    <button type="button" class="btn btn-danger btn-border" data-dismiss="modal">No, I want to continue adding products</button>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
-
-<footer>
-  <p class="text-center totalCompra">
-    Contact us: +57 3102171020 - info@restaurant.com  - @restaurant
-  </p>
-</footer>
-
-    </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-      crossorigin="anonymous"
-    ></script>
+        <footer>
+            <div class="text-center mt-2 mb-3">
+                <span id="footerText">Contact us: +57 3102171020 - info@restaurant.com  - @restaurant</span>
+            </div>
+        </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="main.js"></script>
-  </body>
+    </body>
 </html>
